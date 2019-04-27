@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-export var max_speed = 100
+export var max_speed = 200
 export var rocket_thrust = 10
 export var max_rocket_speed = 200
 var velocity = Vector2()
