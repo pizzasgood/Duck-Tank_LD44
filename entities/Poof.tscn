@@ -3,15 +3,14 @@
 [ext_resource path="res://entities/Poof.gd" type="Script" id=1]
 
 [node name="Poof" type="CPUParticles2D"]
-emitting = false
 amount = 64
-one_shot = true
+lifetime = 0.5
 explosiveness = 1.0
 emission_shape = 1
 emission_sphere_radius = 1.0
 spread = 180.0
 gravity = Vector2( 0, 0 )
-initial_velocity = 25.0
+initial_velocity = 50.0
 linear_accel = -15.06
 linear_accel_random = 1.0
 color = Color( 0.12549, 0.286275, 0.0705882, 1 )
