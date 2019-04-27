@@ -6,4 +6,4 @@ onready var bar = get_node("HBoxContainer/Wealth")
 const log_10 = log(10)
 
 func _process(delta):
-	bar.value = int(player.get_wealth() / 10)
+	bar.value = player.get_wealth() / 100

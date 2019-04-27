@@ -35,4 +35,5 @@ margin_bottom = 28.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 value = 50.0
+percent_visible = false
 
