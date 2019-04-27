@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://entities/thug/Thug.gd" type="Script" id=1]
+[ext_resource path="res://entities/thug/thug.png" type="Texture" id=2]
+[ext_resource path="res://entities/Poof.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 22.3215
+
+[node name="Thug" type="KinematicBody2D" groups=[
+"enemies",
+]]
+collision_layer = 0
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 18
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="Poof" parent="." instance=ExtResource( 3 )]
+

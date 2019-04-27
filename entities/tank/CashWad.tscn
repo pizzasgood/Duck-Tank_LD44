@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://CashWad.gd" type="Script" id=1]
+[ext_resource path="res://entities/tank/cash_wad.png" type="Texture" id=2]
+[ext_resource path="res://entities/Poof.tscn" type="PackedScene" id=3]
+
+[node name="CashWad" type="RigidBody2D" groups=[
+"player_projectiles",
+]]
+collision_layer = 16
+collision_mask = 7
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -6.93266, -2.97583, -6.93266, 1.72327, -4.9056, 3.84247, 6.88822, 3.84247, 6.93429, -0.994839, 5.04544, -3.0219 )
+
+[node name="PoofE" parent="." instance=ExtResource( 3 )]
+
+[node name="PoofP" parent="." instance=ExtResource( 3 )]
+

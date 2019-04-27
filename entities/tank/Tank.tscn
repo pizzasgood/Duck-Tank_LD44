@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://entities/tank/Tank.gd" type="Script" id=1]
+[ext_resource path="res://entities/tank/tank.png" type="Texture" id=2]
+[ext_resource path="res://entities/tank/barrel.png" type="Texture" id=3]
+[ext_resource path="res://entities/tank/puff.png" type="Texture" id=4]
+
+[node name="Tank" type="KinematicBody2D" groups=[
+"player",
+]]
+position = Vector2( 49.0441, 485.834 )
+collision_layer = 2
+collision_mask = 15
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 4, 0 )
+polygon = PoolVector2Array( -30.4629, 18.4284, -17.5246, 31.4398, 9.40789, 31.4064, 22.5064, 18.3675, 22.5064, 11.5206, -6.3103, -27.5964, -17.6822, -26.8819, -17.4305, -5.48355, -24.3296, -1.83112, -30.4629, 11.5572 )
+
+[node name="MainBody" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Barrel" type="Sprite" parent="."]
+position = Vector2( 12.9358, 0.193298 )
+z_index = -1
+texture = ExtResource( 3 )
+offset = Vector2( 11, 0 )
+
+[node name="BarrelEnd" type="Node2D" parent="Barrel"]
+position = Vector2( 25.0521, 0 )
+
+[node name="ExhaustParticles" type="CPUParticles2D" parent="."]
+position = Vector2( -23.026, -7.47925 )
+rotation = 4.71239
+lifetime = 0.5
+local_coords = false
+texture = ExtResource( 4 )
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 15.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 50.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+linear_accel = -0.5
+scale_amount = 0.5
+color = Color( 0.0196078, 0.301961, 0.0352941, 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+smoothing_enabled = true
+drag_margin_right = 0.0
+editor_draw_drag_margin = true
+
+[node name="BarrelCooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="BarrelCooldown" to="." method="_on_BarrelCooldown_timeout"]
