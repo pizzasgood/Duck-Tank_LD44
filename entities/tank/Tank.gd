@@ -24,8 +24,13 @@ var can_fire = true
 var CashWad = load("res://entities/tank/CashWad.tscn")
 
 
-onready var barrel = get_node("Barrel")
-onready var barrel_end = barrel.get_node("BarrelEnd")
+onready var main_body = find_node("MainBody")
+onready var barrel = find_node("Barrel")
+onready var barrel_end = find_node("BarrelEnd")
+onready var exhaust_pipe = find_node("ExhaustPipe")
+onready var idle_exhaust = find_node("IdleExhaust")
+onready var drive_exhaust = find_node("DriveExhaust")
+onready var rocket_exhaust = find_node("RocketExhaust")
 
 
 func _ready():
@@ -49,8 +54,14 @@ func _physics_process(delta):
 func _update_fuel(delta):
 	if velocity.x != 0:
 		fuel -= delta * drive_consumption
+		drive_exhaust.emitting = true
+	else:
+		drive_exhaust.emitting = false
 	if rocket_active:
 		fuel -= delta * rocket_consumption
+		rocket_exhaust.emitting = true
+	else:
+		rocket_exhaust.emitting = false
 	fuel -= delta * idle_consumption
 
 func _handle_input():
@@ -73,19 +84,19 @@ func _handle_input():
 	var angle = global_position.angle_to_point(mouse_pos)
 
 	#mirror tank?
-	$MainBody.flip_h = mouse_pos.x < global_position.x
-	if ($MainBody.flip_h and barrel.position.x > 0) or (not $MainBody.flip_h and barrel.position.x < 0):
+	main_body.flip_h = mouse_pos.x < global_position.x
+	if (main_body.flip_h and barrel.position.x > 0) or (not main_body.flip_h and barrel.position.x < 0):
 		barrel.position.x *= -1
-		$ExhaustParticles.position.x *= -1
+		exhaust_pipe.position.x *= -1
 
 	#tilt the barrel to aim at the mouse
 	#if angle > PI - max_barrel_angle or angle < -PI - min_barrel_angle:
-	$Barrel.look_at(mouse_pos)
+	barrel.look_at(mouse_pos)
 
 	#firing?
 	if Input.is_action_just_pressed("fire") and can_fire:
 		var projectile = CashWad.instance()
-		get_node("/root/main/Level").add_child(projectile)
+		get_tree().root.add_child(projectile)
 		projectile.linear_velocity = velocity
 		projectile.global_transform = barrel_end.global_transform
 		projectile.apply_central_impulse(projectile_impulse * (barrel_end.global_position - barrel.global_position).normalized())
