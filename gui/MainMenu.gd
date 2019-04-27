@@ -2,9 +2,10 @@ extends CenterContainer
 
 onready var resume_button : Button = find_node("Resume")
 onready var exit_button : Button = find_node("Exit")
+onready var music_toggle : CheckButton = find_node("MusicToggle")
 
 func _ready():
-	pass
+	visible = false
 
 
 func _on_Exit_pressed():
@@ -32,3 +33,10 @@ func _unhandled_input(event):
 		  or event.is_action("ui_left") or event.is_action("ui_right") \
 		  or event.is_action("ui_up") or event.is_action("ui_down"):
 			get_tree().set_input_as_handled()
+
+
+func _on_MusicToggle_toggled(button_pressed):
+	if music_toggle.pressed:
+		get_node("/root/main/BGM").playing = true
+	else:
+		get_node("/root/main/BGM").playing = false
