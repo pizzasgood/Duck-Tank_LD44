@@ -8,7 +8,7 @@ func _ready():
 
 func _reparent():
 	var pos = global_position
-	var new_parent = get_node("/root/main/Level")
+	var new_parent = get_node("/root/main")
 	get_parent().remove_child(self)
 	new_parent.add_child(self)
 	global_position = pos

@@ -33,8 +33,9 @@ onready var drive_exhaust = find_node("DriveExhaust")
 onready var rocket_exhaust = find_node("RocketExhaust")
 
 
-func _ready():
-	pass # Replace with function body.
+func _process(delta):
+	if fuel <= 0:
+		get_node("/root/main/GUI/GameOver").activate()
 
 func _physics_process(delta):
 	_handle_input()
@@ -96,7 +97,7 @@ func _handle_input():
 	#firing?
 	if Input.is_action_just_pressed("fire") and can_fire:
 		var projectile = CashWad.instance()
-		get_tree().root.add_child(projectile)
+		get_node("/root/main").add_child(projectile)
 		projectile.linear_velocity = velocity
 		projectile.global_transform = barrel_end.global_transform
 		projectile.apply_central_impulse(projectile_impulse * (barrel_end.global_position - barrel.global_position).normalized())
