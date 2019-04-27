@@ -104,6 +104,7 @@ func _handle_input():
 		fuel -= gun_consumption
 		can_fire = false
 		$BarrelCooldown.start()
+		find_node("SndShoot").play()
 
 
 func get_wealth():
@@ -114,6 +115,10 @@ func add_wealth(gain):
 
 func remove_wealth(loss):
 	fuel -= loss
+
+func damage(loss):
+	remove_wealth(loss)
+	find_node("SndHit").play()
 
 func _on_BarrelCooldown_timeout():
 	can_fire = true

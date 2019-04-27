@@ -22,6 +22,7 @@ func _ready():
 
 func _on_body_entered(object):
 	if object.is_in_group("player"):
+		find_node("SndOw").play()
 		$Poof.activate()
 		object.add_wealth(money)
 		queue_free()
@@ -35,6 +36,11 @@ func _drop_loot_and_die():
 		bag.global_position = global_position
 		bag.linear_velocity = velocity
 		bag.money = money
+		var snd = find_node("SndOw")
+		snd.get_parent().remove_child(snd)
+		bag.add_child(snd)
+		snd.global_position = global_position
+		snd.play()
 		queue_free()
 
 func _physics_process(delta):

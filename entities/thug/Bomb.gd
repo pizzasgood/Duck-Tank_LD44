@@ -15,7 +15,8 @@ func _on_Timer_timeout():
 
 func explode():
 	$Timer.stop()
+	find_node("SndBoom").play()
 	$Poof.activate()
 	if $AoE.overlaps_body(player):
-		player.remove_wealth(damage)
+		player.damage(damage)
 	queue_free()

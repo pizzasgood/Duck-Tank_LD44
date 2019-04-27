@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://entities/tank/CashWad.gd" type="Script" id=1]
 [ext_resource path="res://entities/tank/cash_wad.png" type="Texture" id=2]
 [ext_resource path="res://entities/Poof.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sfx/bling.wav" type="AudioStream" id=4]
+[ext_resource path="res://sfx/thud.wav" type="AudioStream" id=5]
 
 [node name="CashWad" type="RigidBody2D" groups=[
 "player_projectiles",
@@ -22,4 +24,10 @@ polygon = PoolVector2Array( -6.93266, -2.97583, -6.93266, 1.72327, -4.9056, 3.84
 [node name="PoofE" parent="." instance=ExtResource( 3 )]
 
 [node name="PoofP" parent="." instance=ExtResource( 3 )]
+
+[node name="SndBling" type="AudioStreamPlayer2D" parent="PoofP"]
+stream = ExtResource( 4 )
+
+[node name="SndThud" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
 

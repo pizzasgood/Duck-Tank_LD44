@@ -3,6 +3,7 @@
 [ext_resource path="res://entities/Poof.gd" type="Script" id=1]
 
 [node name="Poof" type="CPUParticles2D"]
+emitting = false
 amount = 64
 lifetime = 0.5
 explosiveness = 1.0
