@@ -16,7 +16,10 @@ func _on_body_entered(object):
 		object.add_wealth(money)
 		queue_free()
 	if object.is_in_group("player_projectiles"):
-		object.poof() #I shouldn't need to do this here...
+		object.poof() #I shouldn't need to do this here, but I do for some reason
+		call_deferred("_drop_loot_and_die")
+
+func _drop_loot_and_die():
 		var bag = MoneyBag.instance()
 		get_tree().root.add_child(bag)
 		bag.global_position = global_position
