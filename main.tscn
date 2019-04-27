@@ -17,11 +17,11 @@ layer = -10
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.5, 0.5 )
-motion_mirroring = Vector2( 128, 128 )
+motion_mirroring = Vector2( 1280, 1280 )
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_right = 1301.0
+margin_bottom = 1297.0
 texture = ExtResource( 2 )
 stretch_mode = 2
 
