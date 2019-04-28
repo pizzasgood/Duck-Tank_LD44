@@ -6,7 +6,7 @@ export var rocket_thrust = 10
 export var max_rocket_speed = 200
 var velocity = Vector2()
 
-var fuel = 500
+var wealth = 500
 var idle_consumption = 10
 var drive_consumption = 20
 var rocket_consumption = 100
@@ -33,9 +33,12 @@ onready var idle_exhaust = find_node("IdleExhaust")
 onready var drive_exhaust = find_node("DriveExhaust")
 onready var rocket_exhaust = find_node("RocketExhaust")
 
+func _ready():
+	if Checkpoints.player_data:
+		load_data(Checkpoints.player_data)
 
 func _process(delta):
-	if fuel <= 0:
+	if wealth <= 0:
 		main_body.modulate = Color(1, 0, 0, 1)
 		get_node("/root/main/GUI/GameOver").activate()
 
@@ -52,20 +55,20 @@ func _physics_process(delta):
 		else:
 			velocity.y += 9.81
 		move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
-	_update_fuel(delta)
+	_burn_money_as_fuel(delta)
 
-func _update_fuel(delta):
+func _burn_money_as_fuel(delta):
 	if velocity.x != 0:
-		fuel -= delta * drive_consumption
+		wealth -= delta * drive_consumption
 		drive_exhaust.emitting = true
 	else:
 		drive_exhaust.emitting = false
 	if rocket_active:
-		fuel -= delta * rocket_consumption
+		wealth -= delta * rocket_consumption
 		rocket_exhaust.emitting = true
 	else:
 		rocket_exhaust.emitting = false
-	fuel -= delta * idle_consumption
+	wealth -= delta * idle_consumption
 
 func _handle_input():
 	#left and right
@@ -104,25 +107,31 @@ func _handle_input():
 		projectile.global_transform = barrel_end.global_transform
 		projectile.apply_central_impulse(projectile_impulse * (barrel_end.global_position - barrel.global_position).normalized())
 		projectile.money = gun_consumption * gun_efficiency
-		fuel -= gun_consumption
+		wealth -= gun_consumption
 		can_fire = false
 		$BarrelCooldown.start()
 		find_node("SndShoot").play()
 
 func get_wealth():
-	return fuel
+	return wealth
 
 func add_wealth(gain):
-	fuel += gain
+	wealth += gain
 
 func remove_wealth(loss):
-	fuel -= loss
+	wealth -= loss
 
 func damage(loss):
 	remove_wealth(loss)
 	find_node("SndHit").play()
 	main_body.modulate = Color(1, 0, 0, 1)
 	$DamageFlash.start()
+
+func has_cannon():
+	return barrel.visible
+
+func has_rocket():
+	return can_rocket
 
 func activate_cannon():
 	barrel.visible = true
@@ -131,9 +140,24 @@ func activate_cannon():
 func activate_rocket():
 	can_rocket = true
 
+func dump_data():
+	var data = Dictionary()
+	data['wealth'] = wealth
+	data['global_position'] = global_position
+	data['have_cannon'] = has_cannon()
+	data['have_rocket'] = has_rocket()
+	return data
+
+func load_data(data):
+	wealth = data['wealth']
+	global_position = data['global_position']
+	if data['have_cannon']:
+		activate_cannon()
+	if data['have_rocket']:
+		activate_rocket()
+
 func _on_BarrelCooldown_timeout():
 	can_fire = true
-
 
 func _on_DamageFlash_timeout():
 	main_body.modulate = Color(1, 1, 1, 1)

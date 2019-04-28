@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-var triggered = false
-
 export var price = 1000
 
 onready var player = get_tree().get_nodes_in_group("player")[0]
@@ -26,8 +24,7 @@ func _hide_all():
 	response_dialog.visible = false
 
 func activate():
-	if not triggered:
-		triggered = true
+	if not player.has_cannon():
 		get_tree().paused = true
 		_center_offer()
 		offer_dialog.visible = true
@@ -63,7 +60,6 @@ func _on_Pay_pressed():
 		_grant_cannon()
 		_respond_with("Wonderful.  My children will eat tonight.  As thanks, I will not charge for the installation!")
 	else:
-		triggered = false
 		_respond_with("Excellent.  Allow me to just... no, wait.  You don't have enough money!  You dirty cheat!  Leave, and don't come back until you have $%s." % price)
 
 func _on_Steal_pressed():

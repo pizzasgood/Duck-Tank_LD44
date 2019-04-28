@@ -19,6 +19,10 @@ config/name="LD44"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Checkpoints="*res://Checkpoints.gd"
+
 [debug]
 
 gdscript/warnings/unused_variable=false

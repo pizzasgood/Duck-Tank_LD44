@@ -92,7 +92,6 @@ position = Vector2( -63.953, 76.4495 )
 position = Vector2( 21.9077, 59.4678 )
 
 [node name="TheCamel" type="Node2D" parent="StarterCave"]
-editor/display_folded = true
 
 [node name="Thug" parent="StarterCave/TheCamel" instance=ExtResource( 4 )]
 position = Vector2( -242.003, 310.738 )
@@ -108,6 +107,9 @@ position = Vector2( 401.726, 341.236 )
 
 [node name="ShopZone" type="Node2D" parent="."]
 position = Vector2( 3092.23, 1039.27 )
+
+[node name="Thug5" parent="ShopZone" instance=ExtResource( 4 )]
+position = Vector2( -853.234, 171.345 )
 
 [node name="ShopSign" type="TextureRect" parent="ShopZone"]
 margin_left = 1.6145

@@ -17,6 +17,12 @@ func _on_Resume_pressed():
 	get_tree().paused = false
 
 func _unhandled_input(event):
+	####
+	if event.is_action_pressed("ui_end"):
+		Checkpoints.set_checkpoint()
+	if event.is_action_pressed("ui_home"):
+		Checkpoints.restore_checkpoint()
+	####
 	if event.is_action_pressed("menu"):
 		if visible:
 			_on_Resume_pressed()
