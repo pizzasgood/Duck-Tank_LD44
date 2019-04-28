@@ -43,7 +43,10 @@ func _ready():
 func _process(delta):
 	if wealth <= 0:
 		main_body.modulate = Color(1, 0, 0, 1)
-		get_tree().get_current_scene().find_node("GameOver").activate()
+		call_deferred("_die") #gives the GUI time to update first
+
+func _die():
+	get_tree().get_current_scene().find_node("GameOver").activate()
 
 func _physics_process(delta):
 	_handle_input()
