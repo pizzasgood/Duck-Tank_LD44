@@ -92,6 +92,10 @@ editor_draw_drag_margin = true
 wait_time = 0.5
 one_shot = true
 
+[node name="DamageFlash" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
 [node name="SndHit" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( -49.0441, -485.834 )
 stream = ExtResource( 6 )
@@ -100,3 +104,4 @@ stream = ExtResource( 6 )
 stream = ExtResource( 7 )
 
 [connection signal="timeout" from="BarrelCooldown" to="." method="_on_BarrelCooldown_timeout"]
+[connection signal="timeout" from="DamageFlash" to="." method="_on_DamageFlash_timeout"]

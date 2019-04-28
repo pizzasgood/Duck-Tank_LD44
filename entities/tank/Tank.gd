@@ -36,6 +36,7 @@ onready var rocket_exhaust = find_node("RocketExhaust")
 
 func _process(delta):
 	if fuel <= 0:
+		main_body.modulate = Color(1, 0, 0, 1)
 		get_node("/root/main/GUI/GameOver").activate()
 
 func _physics_process(delta):
@@ -120,6 +121,8 @@ func remove_wealth(loss):
 func damage(loss):
 	remove_wealth(loss)
 	find_node("SndHit").play()
+	main_body.modulate = Color(1, 0, 0, 1)
+	$DamageFlash.start()
 
 func activate_cannon():
 	barrel.visible = true
@@ -130,3 +133,7 @@ func activate_rocket():
 
 func _on_BarrelCooldown_timeout():
 	can_fire = true
+
+
+func _on_DamageFlash_timeout():
+	main_body.modulate = Color(1, 1, 1, 1)
