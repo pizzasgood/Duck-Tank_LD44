@@ -6,7 +6,8 @@ export var rocket_thrust = 10
 export var max_rocket_speed = 200
 var velocity = Vector2()
 
-var wealth = 500
+var starting_funds = 500
+var wealth = starting_funds
 var idle_consumption = 10
 var drive_consumption = 20
 var rocket_consumption = 100
@@ -149,7 +150,7 @@ func dump_data():
 	return data
 
 func load_data(data):
-	wealth = data['wealth']
+	wealth = max(starting_funds, data['wealth'])
 	global_position = data['global_position']
 	if data['have_cannon']:
 		activate_cannon()

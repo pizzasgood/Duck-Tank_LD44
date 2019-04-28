@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://bgs/cave1.png" type="Texture" id=1]
 [ext_resource path="res://tileset.tres" type="TileSet" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://entities/thug/Thug.tscn" type="PackedScene" id=4]
 [ext_resource path="res://bgs/shop_sign.png" type="Texture" id=5]
 [ext_resource path="res://gui/CannonOffer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/checkpoint_station/CheckpointStation.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 41.7021, 30.674 )
@@ -131,5 +132,8 @@ shape = SubResource( 1 )
 
 [node name="MechanicSpawn" type="Node2D" parent="ShopZone"]
 position = Vector2( 105.79, 166.943 )
+
+[node name="CheckpointStation" parent="ShopZone" instance=ExtResource( 7 )]
+position = Vector2( 498.5, 176.704 )
 
 [connection signal="body_entered" from="ShopZone/ShopBay" to="ShopZone/CannonOffer" method="_on_ShopBay_body_entered"]
