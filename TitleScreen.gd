@@ -4,6 +4,7 @@ onready var start_button : Button = find_node("Start")
 onready var exit_button : Button = find_node("Exit")
 
 func _ready():
+	Checkpoints.clear()
 	get_tree().paused = false
 	start_button.grab_focus()
 

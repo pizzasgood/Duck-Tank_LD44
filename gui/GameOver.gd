@@ -13,8 +13,12 @@ func activate():
 	restart_button.grab_focus()
 
 func _on_Restart_pressed():
-	get_tree().reload_current_scene()
-	get_tree().paused = false
+	if Checkpoints.available():
+		Checkpoints.restore_checkpoint()
+		get_tree().paused = false
+	else:
+		get_tree().reload_current_scene()
+		get_tree().paused = false
 
 func _on_Title_pressed():
 	get_tree().change_scene("res://TitleScreen.tscn")

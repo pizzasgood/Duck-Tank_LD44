@@ -12,3 +12,10 @@ func set_checkpoint():
 func restore_checkpoint():
 	if last_save:
 		get_tree().change_scene_to(checkpoint)
+
+func clear():
+	last_save = null
+	player_data = null
+
+func available():
+	return last_save != null

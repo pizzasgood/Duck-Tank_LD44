@@ -34,7 +34,7 @@ onready var drive_exhaust = find_node("DriveExhaust")
 onready var rocket_exhaust = find_node("RocketExhaust")
 
 func _ready():
-	if Checkpoints.player_data:
+	if Checkpoints.available() and Checkpoints.player_data:
 		load_data(Checkpoints.player_data)
 
 func _process(delta):
