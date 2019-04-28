@@ -43,6 +43,7 @@ func _spawn_mechanic():
 	var mechanic = Thug.instance()
 	mechanic.set_bomb_cooldown(0.1)
 	mechanic.bomb_random_factor = 5
+	mechanic.speed *= 2
 	mechanic_spawn.add_child(mechanic)
 
 func _respond_with(message):
