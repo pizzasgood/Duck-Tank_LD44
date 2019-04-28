@@ -6,6 +6,7 @@ onready var music_toggle : CheckButton = find_node("MusicToggle")
 
 func _ready():
 	visible = false
+	get_node("/root/main/BGM").playing = Checkpoints.music #this isn't really the appropriate place for this, but am in a hurry
 
 
 func _on_Exit_pressed():
@@ -27,6 +28,7 @@ func _unhandled_input(event):
 		if visible:
 			_on_Resume_pressed()
 		else:
+			music_toggle.pressed = Checkpoints.music
 			visible = true
 			resume_button.grab_focus()
 			get_tree().paused = true
@@ -42,7 +44,5 @@ func _unhandled_input(event):
 
 
 func _on_MusicToggle_toggled(button_pressed):
-	if music_toggle.pressed:
-		get_node("/root/main/BGM").playing = true
-	else:
-		get_node("/root/main/BGM").playing = false
+	Checkpoints.music = music_toggle.pressed
+	get_node("/root/main/BGM").playing = Checkpoints.music

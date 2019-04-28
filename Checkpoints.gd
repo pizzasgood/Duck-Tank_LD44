@@ -1,5 +1,7 @@
 extends Node
 
+var music = true
+
 var last_save
 var player_data
 var checkpoint = PackedScene.new()
