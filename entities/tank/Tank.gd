@@ -33,6 +33,7 @@ onready var exhaust_pipe = find_node("ExhaustPipe")
 onready var idle_exhaust = find_node("IdleExhaust")
 onready var drive_exhaust = find_node("DriveExhaust")
 onready var rocket_exhaust = find_node("RocketExhaust")
+onready var snd_rocket = find_node("SndRocket")
 
 func _ready():
 	if Checkpoints.available() and Checkpoints.player_data:
@@ -72,8 +73,12 @@ func _burn_money_as_fuel(delta):
 	if rocket_active:
 		wealth -= delta * rocket_consumption
 		rocket_exhaust.emitting = true
+		if not snd_rocket.playing:
+			snd_rocket.play()
 	else:
 		rocket_exhaust.emitting = false
+		if snd_rocket.playing:
+			snd_rocket.stop()
 	wealth -= delta * idle_consumption
 
 func _handle_input():
@@ -174,3 +179,9 @@ func _on_BarrelCooldown_timeout():
 
 func _on_DamageFlash_timeout():
 	main_body.modulate = Color(1, 1, 1, 1)
+
+
+func _on_SndRocket_finished():
+	if rocket_active:
+		snd_rocket.play()
+
