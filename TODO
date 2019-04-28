@@ -1,10 +1,9 @@
-npc movement
-shooting
 destructable tiles
 sparkle particle effect
-music
-sfx
 change physics to more realistic so we do jumps and shit
 smarter camera
 	swing down when falling, up when rising
-    keep view offset way right
+pay-to-use checkpoints
+dedicated simple-dialog box
+rocket factory to steal rocket tech from
+victory condition
