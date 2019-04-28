@@ -16,10 +16,10 @@ stream = ExtResource( 1 )
 autoplay = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 layer = -10
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -9
 motion_scale = Vector2( 0.5, 0.5 )
 motion_mirroring = Vector2( 1280, 1280 )
 
