@@ -20,10 +20,17 @@ func _on_Resume_pressed():
 func _unhandled_input(event):
 	#define some debug controls
 	if OS.is_debug_build():
-		#manual savepoints are useful
-		if event.is_action_pressed("ui_page_up"):
-			#teleport to shop
-			get_tree().get_nodes_in_group("player")[0].global_position = get_tree().get_current_scene().find_node("ShopZone").global_position
+		var p = get_tree().get_nodes_in_group("player")[0]
+		var s = get_tree().get_current_scene()
+		if event.is_action_pressed("debug_upgrades"):
+			p.activate_cannon()
+			p.activate_rocket()
+			p.add_wealth(5000)
+		if event.is_action_pressed("teleport1"):
+			p.global_position = s.find_node("ShopZone").global_position
+		if event.is_action_pressed("teleport2"):
+			p.global_position = s.find_node("City").global_position
+		#quick-saves
 		if event.is_action_pressed("ui_end"):
 			Checkpoints.set_checkpoint()
 		if event.is_action_pressed("ui_home"):

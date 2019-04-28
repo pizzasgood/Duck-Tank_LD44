@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=34 format=2]
+[gd_resource type="TileSet" load_steps=35 format=2]
 
 [ext_resource path="res://tiles/dirt.png" type="Texture" id=1]
 [ext_resource path="res://tiles/road_flat.png" type="Texture" id=2]
@@ -14,13 +14,14 @@
 [ext_resource path="res://tiles/garage_door_rt.png" type="Texture" id=12]
 [ext_resource path="res://tiles/road_flat_half.png" type="Texture" id=13]
 [ext_resource path="res://tiles/cinderblocks.png" type="Texture" id=14]
-[ext_resource path="res://tiles/road_slope_d2.png" type="Texture" id=15]
-[ext_resource path="res://tiles/road_slope_d1.png" type="Texture" id=16]
-[ext_resource path="res://tiles/road_slope_u1.png" type="Texture" id=17]
-[ext_resource path="res://tiles/road_slope_u2.png" type="Texture" id=18]
-[ext_resource path="res://tiles/grass.png" type="Texture" id=19]
-[ext_resource path="res://tiles/roof_left.png" type="Texture" id=20]
-[ext_resource path="res://tiles/roof_middle.png" type="Texture" id=21]
+[ext_resource path="res://tiles/window.png" type="Texture" id=15]
+[ext_resource path="res://tiles/road_slope_d2.png" type="Texture" id=16]
+[ext_resource path="res://tiles/road_slope_d1.png" type="Texture" id=17]
+[ext_resource path="res://tiles/road_slope_u1.png" type="Texture" id=18]
+[ext_resource path="res://tiles/road_slope_u2.png" type="Texture" id=19]
+[ext_resource path="res://tiles/grass.png" type="Texture" id=20]
+[ext_resource path="res://tiles/roof_left.png" type="Texture" id=21]
+[ext_resource path="res://tiles/roof_middle.png" type="Texture" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
@@ -108,7 +109,7 @@ extents = Vector2( 16, 4.10288 )
 } ]
 2/z_index = 0
 3/name = "road_slope_d2"
-3/texture = ExtResource( 15 )
+3/texture = ExtResource( 16 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 0, 0, 32, 32 )
@@ -124,7 +125,7 @@ extents = Vector2( 16, 4.10288 )
 } ]
 3/z_index = 0
 4/name = "road_slope_d1"
-4/texture = ExtResource( 16 )
+4/texture = ExtResource( 17 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 0, 0, 32, 32 )
@@ -140,7 +141,7 @@ extents = Vector2( 16, 4.10288 )
 } ]
 4/z_index = 0
 5/name = "road_slope_u1"
-5/texture = ExtResource( 17 )
+5/texture = ExtResource( 18 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 0, 0, 32, 32 )
@@ -156,7 +157,7 @@ extents = Vector2( 16, 4.10288 )
 } ]
 5/z_index = 0
 6/name = "road_slope_u2"
-6/texture = ExtResource( 18 )
+6/texture = ExtResource( 19 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 0, 0, 32, 32 )
@@ -172,7 +173,7 @@ extents = Vector2( 16, 4.10288 )
 } ]
 6/z_index = 0
 7/name = "grass_flat"
-7/texture = ExtResource( 19 )
+7/texture = ExtResource( 20 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 0, 0, 32, 32 )
@@ -188,7 +189,7 @@ extents = Vector2( 16, 4.10288 )
 } ]
 7/z_index = 0
 8/name = "roof_left"
-8/texture = ExtResource( 20 )
+8/texture = ExtResource( 21 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 0, 0, 32, 32 )
@@ -204,7 +205,7 @@ extents = Vector2( 16, 4.10288 )
 } ]
 8/z_index = 0
 9/name = "roof_middle"
-9/texture = ExtResource( 21 )
+9/texture = ExtResource( 22 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 0, 0, 32, 32 )
@@ -341,4 +342,14 @@ extents = Vector2( 16, 4.10288 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 16, 16 )
 } ]
 20/z_index = 0
+21/name = "window"
+21/texture = ExtResource( 15 )
+21/tex_offset = Vector2( 0, 0 )
+21/modulate = Color( 1, 1, 1, 1 )
+21/region = Rect2( 0, 0, 32, 32 )
+21/tile_mode = 0
+21/occluder_offset = Vector2( 16, 16 )
+21/navigation_offset = Vector2( 16, 16 )
+21/shapes = [  ]
+21/z_index = 0
 

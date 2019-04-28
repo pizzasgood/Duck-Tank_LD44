@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://tiles/dirt.png" type="Texture" id=1]
 [ext_resource path="res://tiles/road_flat.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://tiles/garage_door_rb.png" type="Texture" id=19]
 [ext_resource path="res://tiles/garage_door_rt.png" type="Texture" id=20]
 [ext_resource path="res://tiles/cinderblocks.png" type="Texture" id=21]
+[ext_resource path="res://tiles/window.png" type="Texture" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
@@ -199,6 +200,7 @@ position = Vector2( 464, 16 )
 texture = ExtResource( 20 )
 
 [node name="cinderblocks" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 496, 16 )
 texture = ExtResource( 21 )
 
@@ -206,4 +208,8 @@ texture = ExtResource( 21 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cinderblocks/StaticBody2D"]
 shape = SubResource( 8 )
+
+[node name="window" type="Sprite" parent="."]
+position = Vector2( 528, 16 )
+texture = ExtResource( 22 )
 
