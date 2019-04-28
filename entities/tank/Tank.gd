@@ -6,7 +6,7 @@ export var rocket_thrust = 10
 export var max_rocket_speed = 200
 var velocity = Vector2()
 
-var fuel = 100
+var fuel = 500
 var idle_consumption = 10
 var drive_consumption = 20
 var rocket_consumption = 100
@@ -19,7 +19,8 @@ var min_barrel_angle = -1.0/8.0 * PI
 export var projectile_impulse = 500
 
 var rocket_active = false
-var can_fire = true
+var can_fire = false #cannon starts off disabled; unlock at the Shop
+var can_rocket = false #rocket starts off disabled; unlock... SOMEWHERE
 
 var CashWad = load("res://entities/tank/CashWad.tscn")
 
@@ -74,7 +75,7 @@ func _handle_input():
 		velocity.x -= max_speed
 
 	#using the rocket?
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("ui_up") and can_rocket:
 		rocket_active = true
 		velocity.y = max(velocity.y - rocket_thrust, -max_rocket_speed)
 	else:
@@ -107,7 +108,6 @@ func _handle_input():
 		$BarrelCooldown.start()
 		find_node("SndShoot").play()
 
-
 func get_wealth():
 	return fuel
 
@@ -120,6 +120,13 @@ func remove_wealth(loss):
 func damage(loss):
 	remove_wealth(loss)
 	find_node("SndHit").play()
+
+func activate_cannon():
+	barrel.visible = true
+	can_fire = true
+
+func activate_rocket():
+	can_rocket = true
 
 func _on_BarrelCooldown_timeout():
 	can_fire = true

@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 export var damage = 500
-onready var player = get_node("/root/main/Player")
+onready var player = get_tree().get_nodes_in_group("player")[0]
 
 func _ready():
 	connect("body_entered", self, "_on_body_entered")

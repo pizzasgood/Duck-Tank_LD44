@@ -13,7 +13,6 @@ func _physics_process(delta):
 
 func _on_body_entered(object):
 	find_node("SndThud").volume_db = min(speed/10000, 15) - 15
-	print([speed, find_node("SndThud").volume_db])
 	find_node("SndThud").play()
 	if object.is_in_group("enemy"):
 		poof()

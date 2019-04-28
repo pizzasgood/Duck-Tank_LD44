@@ -2,9 +2,9 @@
 
 [ext_resource path="res://entities/tank/Tank.gd" type="Script" id=1]
 [ext_resource path="res://entities/tank/plum.png" type="Texture" id=2]
-[ext_resource path="res://entities/tank/puff.png" type="Texture" id=3]
-[ext_resource path="res://entities/tank/tank.png" type="Texture" id=4]
-[ext_resource path="res://entities/tank/barrel.png" type="Texture" id=5]
+[ext_resource path="res://entities/tank/barrel.png" type="Texture" id=3]
+[ext_resource path="res://entities/tank/puff.png" type="Texture" id=4]
+[ext_resource path="res://entities/tank/tank.png" type="Texture" id=5]
 [ext_resource path="res://sfx/hit.wav" type="AudioStream" id=6]
 [ext_resource path="res://sfx/bang.wav" type="AudioStream" id=7]
 
@@ -30,6 +30,15 @@ initial_velocity = 300.0
 scale_amount_curve = SubResource( 1 )
 color = Color( 0.196078, 1, 0.239216, 1 )
 
+[node name="Barrel" type="Sprite" parent="."]
+visible = false
+position = Vector2( 12.9358, 0.193298 )
+texture = ExtResource( 3 )
+offset = Vector2( 11, 0 )
+
+[node name="BarrelEnd" type="Node2D" parent="Barrel"]
+position = Vector2( 25.0521, 0 )
+
 [node name="ExhaustPipe" type="Node2D" parent="."]
 position = Vector2( -23.026, -7.47925 )
 rotation = -1.5708
@@ -38,7 +47,7 @@ rotation = -1.5708
 amount = 3
 lifetime = 0.5
 local_coords = false
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 emission_shape = 1
 emission_sphere_radius = 1.0
 spread = 15.0
@@ -55,7 +64,7 @@ emitting = false
 amount = 6
 lifetime = 0.5
 local_coords = false
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 emission_shape = 1
 emission_sphere_radius = 1.0
 spread = 15.0
@@ -72,21 +81,11 @@ position = Vector2( 4, 0 )
 polygon = PoolVector2Array( -30.4629, 18.4284, -17.5246, 31.4398, 9.40789, 31.4064, 22.5064, 18.3675, 22.5064, 11.5206, -6.3103, -27.5964, -17.6822, -26.8819, -17.4305, -5.48355, -24.3296, -1.83112, -30.4629, 11.5572 )
 
 [node name="MainBody" type="Sprite" parent="."]
-texture = ExtResource( 4 )
-
-[node name="Barrel" type="Sprite" parent="."]
-position = Vector2( 12.9358, 0.193298 )
-z_index = -1
 texture = ExtResource( 5 )
-offset = Vector2( 11, 0 )
-
-[node name="BarrelEnd" type="Node2D" parent="Barrel"]
-position = Vector2( 25.0521, 0 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 smoothing_enabled = true
-drag_margin_right = 0.0
 editor_draw_drag_margin = true
 
 [node name="BarrelCooldown" type="Timer" parent="."]

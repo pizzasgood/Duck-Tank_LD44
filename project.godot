@@ -75,6 +75,7 @@ fire={
 2d_physics/layer_4="pickups"
 2d_physics/layer_5="player_projectiles"
 2d_physics/layer_6="enemy_projectiles"
+2d_physics/layer_7="map_triggers"
 
 [rendering]
 

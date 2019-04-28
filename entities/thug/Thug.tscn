@@ -32,3 +32,6 @@ shape = SubResource( 1 )
 [node name="SndOw" type="AudioStreamPlayer2D" parent="Poof"]
 stream = ExtResource( 4 )
 
+[node name="BombCooldown" type="Timer" parent="."]
+
+[connection signal="timeout" from="BombCooldown" to="." method="_on_BombCooldown_timeout"]

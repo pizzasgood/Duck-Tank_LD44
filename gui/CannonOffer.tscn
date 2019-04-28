@@ -1,0 +1,102 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://gui/CannonOffer.gd" type="Script" id=1]
+[ext_resource path="res://fonts/default_font.tres" type="DynamicFont" id=2]
+
+[node name="CannonOffer" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="Offer" type="Node2D" parent="."]
+visible = false
+position = Vector2( 510.708, 288.642 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="Offer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -208.5
+margin_top = -93.0
+margin_right = 208.5
+margin_bottom = 93.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Offer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 410.0
+margin_bottom = 179.0
+
+[node name="Label" type="Label" parent="Offer/PanelContainer/VBoxContainer"]
+margin_right = 403.0
+margin_bottom = 141.0
+custom_fonts/font = ExtResource( 2 )
+text = "Comrade, your tank is very handsome but it lacks a cannon!  Lucky for you, I was allocated a cannon during the Great Redistribution, and its colors would match your tank flawlessly.  I'd be happy to sell you this cannon for a piddly sum of $1000.  It's a deal, yes?"
+align = 3
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Offer/PanelContainer/VBoxContainer"]
+margin_top = 145.0
+margin_right = 403.0
+margin_bottom = 172.0
+
+[node name="Pay" type="Button" parent="Offer/PanelContainer/VBoxContainer/HBoxContainer"]
+margin_right = 199.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Pay"
+
+[node name="Steal" type="Button" parent="Offer/PanelContainer/VBoxContainer/HBoxContainer"]
+margin_left = 203.0
+margin_right = 403.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Steal It"
+
+[node name="Response" type="Node2D" parent="."]
+visible = false
+position = Vector2( 509.911, 289.702 )
+
+[node name="PanelContainer" type="PanelContainer" parent="Response"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -208.492
+margin_top = -18.3732
+margin_right = 203.508
+margin_bottom = 47.6268
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Response/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 405.0
+margin_bottom = 59.0
+
+[node name="ResponseLabel" type="Label" parent="Response/PanelContainer/VBoxContainer"]
+margin_right = 398.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 2 )
+align = 3
+autowrap = true
+
+[node name="Dismiss" type="Button" parent="Response/PanelContainer/VBoxContainer"]
+margin_top = 25.0
+margin_right = 398.0
+margin_bottom = 52.0
+custom_fonts/font = ExtResource( 2 )
+text = "OK"
+
+[connection signal="pressed" from="Offer/PanelContainer/VBoxContainer/HBoxContainer/Pay" to="." method="_on_Pay_pressed"]
+[connection signal="pressed" from="Offer/PanelContainer/VBoxContainer/HBoxContainer/Steal" to="." method="_on_Steal_pressed"]
+[connection signal="pressed" from="Response/PanelContainer/VBoxContainer/Dismiss" to="." method="_on_Dismiss_pressed"]

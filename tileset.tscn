@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://tiles/dirt.png" type="Texture" id=1]
 [ext_resource path="res://tiles/road_flat.png" type="Texture" id=2]
@@ -7,7 +7,19 @@
 [ext_resource path="res://tiles/road_slope_d1.png" type="Texture" id=5]
 [ext_resource path="res://tiles/road_slope_u1.png" type="Texture" id=6]
 [ext_resource path="res://tiles/road_slope_u2.png" type="Texture" id=7]
-[ext_resource path="res://tiles/sky_blue.png" type="Texture" id=8]
+[ext_resource path="res://tiles/grass.png" type="Texture" id=8]
+[ext_resource path="res://tiles/roof_left.png" type="Texture" id=9]
+[ext_resource path="res://tiles/roof_middle.png" type="Texture" id=10]
+[ext_resource path="res://tiles/roof_right.png" type="Texture" id=11]
+[ext_resource path="res://tiles/bricks.png" type="Texture" id=12]
+[ext_resource path="res://tiles/door_bottom.png" type="Texture" id=13]
+[ext_resource path="res://tiles/door_top.png" type="Texture" id=14]
+[ext_resource path="res://tiles/garage_door_lb.png" type="Texture" id=15]
+[ext_resource path="res://tiles/garage_door_lt.png" type="Texture" id=16]
+[ext_resource path="res://tiles/garage_door_mb.png" type="Texture" id=17]
+[ext_resource path="res://tiles/garage_door_mt.png" type="Texture" id=18]
+[ext_resource path="res://tiles/garage_door_rb.png" type="Texture" id=19]
+[ext_resource path="res://tiles/garage_door_rt.png" type="Texture" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
@@ -18,9 +30,22 @@ extents = Vector2( 16, 16 )
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 16, 8 )
 
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 5.04324, 4.0804 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 16, 4.10288 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 5.01166, 4.05226 )
+
 [node name="Node" type="Node"]
 
 [node name="dirt" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 16, 16 )
 texture = ExtResource( 1 )
 
@@ -30,6 +55,7 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="road_flat" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 48, 16 )
 texture = ExtResource( 2 )
 
@@ -39,6 +65,7 @@ texture = ExtResource( 2 )
 shape = SubResource( 2 )
 
 [node name="road_flat_half" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 208, 16 )
 texture = ExtResource( 3 )
 
@@ -49,6 +76,7 @@ position = Vector2( 0, 8 )
 shape = SubResource( 7 )
 
 [node name="road_slope_d2" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 80, 16 )
 texture = ExtResource( 4 )
 
@@ -58,6 +86,7 @@ texture = ExtResource( 4 )
 polygon = PoolVector2Array( -16, -16, 16, 0, 16, 16, -16, 16, -16, -16 )
 
 [node name="road_slope_d1" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 112, 16 )
 texture = ExtResource( 5 )
 
@@ -67,6 +96,7 @@ texture = ExtResource( 5 )
 polygon = PoolVector2Array( -16, 0, -16, 16, 16, 16, -16, 0 )
 
 [node name="road_slope_u1" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 144, 16 )
 texture = ExtResource( 6 )
 
@@ -76,6 +106,7 @@ texture = ExtResource( 6 )
 polygon = PoolVector2Array( -16, 16, 16, 0, 16, 16, -16, 16 )
 
 [node name="road_slope_u2" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 176, 16 )
 texture = ExtResource( 7 )
 
@@ -84,7 +115,82 @@ texture = ExtResource( 7 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="road_slope_u2/StaticBody2D"]
 polygon = PoolVector2Array( -16, 0, 16, -16, 16, 16, -16, 16, -16, 0 )
 
-[node name="sky_blue" type="Sprite" parent="."]
+[node name="grass_flat" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 240, 16 )
 texture = ExtResource( 8 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass_flat"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_flat/StaticBody2D"]
+shape = SubResource( 8 )
+
+[node name="roof_left" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 272, 16 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="roof_left"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roof_left/StaticBody2D"]
+position = Vector2( 10.9698, -11.8971 )
+shape = SubResource( 9 )
+
+[node name="roof_middle" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 304, 16 )
+texture = ExtResource( 10 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="roof_middle"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roof_middle/StaticBody2D"]
+position = Vector2( 0, -11.8971 )
+shape = SubResource( 10 )
+
+[node name="roof_right" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 336, 16 )
+texture = ExtResource( 11 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="roof_right"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roof_right/StaticBody2D"]
+position = Vector2( -10.9838, -11.9568 )
+shape = SubResource( 11 )
+
+[node name="brick" type="Sprite" parent="."]
+position = Vector2( 304, 48 )
+texture = ExtResource( 12 )
+
+[node name="door_bottom" type="Sprite" parent="."]
+position = Vector2( 368, 48 )
+texture = ExtResource( 13 )
+
+[node name="door_top" type="Sprite" parent="."]
+position = Vector2( 368, 16 )
+texture = ExtResource( 14 )
+
+[node name="garage_door_lb" type="Sprite" parent="."]
+position = Vector2( 400, 48 )
+texture = ExtResource( 15 )
+
+[node name="garage_door_lt" type="Sprite" parent="."]
+position = Vector2( 400, 16 )
+texture = ExtResource( 16 )
+
+[node name="garage_door_mb" type="Sprite" parent="."]
+position = Vector2( 432, 48 )
+texture = ExtResource( 17 )
+
+[node name="garage_door_mt" type="Sprite" parent="."]
+position = Vector2( 432, 16 )
+texture = ExtResource( 18 )
+
+[node name="garage_door_rb" type="Sprite" parent="."]
+position = Vector2( 464, 48 )
+texture = ExtResource( 19 )
+
+[node name="garage_door_rt" type="Sprite" parent="."]
+position = Vector2( 464, 16 )
+texture = ExtResource( 20 )
 
