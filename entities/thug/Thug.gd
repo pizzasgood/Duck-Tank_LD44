@@ -7,8 +7,9 @@ var jumping = false
 var velocity = Vector2()
 var starting_x
 var direction = Vector2.LEFT
-export var wander_range = [ -100, 100 ]
 export var speed = 100
+export var wander_range = [ -100, 100 ]
+export var turn_factor = 1 #chance per second
 export var bomb_random_factor = 0.5 #chance per second
 export var bomb_cooldown = 1
 export var bomb_fuse = 2
@@ -70,12 +71,18 @@ func _physics_process(delta):
 	sprite.flip_h = velocity.x > 0
 
 func _artificial_stupidity(delta):
+	#turn randomly
+	if r.randf() / delta < turn_factor:
+		direction *= -1
+	#try to return to correct area if out of bounds
 	var pos = position.x - starting_x
 	if pos < wander_range[0]:
 		direction = Vector2.RIGHT
 	elif pos > wander_range[1]:
 		direction = Vector2.LEFT
+	#apply movement
 	velocity.x = speed * direction.x
+	#consider chucking a bomb
 	if can_throw and r.randf() / delta < bomb_random_factor:
 		_toss_bomb()
 
