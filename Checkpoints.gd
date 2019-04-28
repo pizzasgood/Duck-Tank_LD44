@@ -9,6 +9,8 @@ var checkpoint = PackedScene.new()
 
 func set_checkpoint(use_station = null):
 	last_save = OS.get_datetime()
+	if station:
+		get_node(station).deactivate()
 	station = use_station
 	player_data = get_tree().get_nodes_in_group("player")[0].dump_data()
 	checkpoint.pack(get_tree().get_current_scene())

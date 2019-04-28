@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://tiles/dirt.png" type="Texture" id=1]
 [ext_resource path="res://tiles/road_flat.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://tiles/garage_door_mt.png" type="Texture" id=18]
 [ext_resource path="res://tiles/garage_door_rb.png" type="Texture" id=19]
 [ext_resource path="res://tiles/garage_door_rt.png" type="Texture" id=20]
+[ext_resource path="res://tiles/cinderblocks.png" type="Texture" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
@@ -27,20 +28,23 @@ extents = Vector2( 16, 16 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16, 16 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 16, 8 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 5.04324, 4.0804 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 16, 4.10288 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 5.01166, 4.05226 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 16, 16 )
-
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 5.04324, 4.0804 )
-
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 16, 4.10288 )
-
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 5.01166, 4.05226 )
 
 [node name="Node" type="Node"]
 
@@ -73,7 +77,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="road_flat_half/StaticBody2D"]
 position = Vector2( 0, 8 )
-shape = SubResource( 7 )
+shape = SubResource( 3 )
 
 [node name="road_slope_d2" type="Sprite" parent="."]
 editor/display_folded = true
@@ -123,7 +127,7 @@ texture = ExtResource( 8 )
 [node name="StaticBody2D" type="StaticBody2D" parent="grass_flat"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="grass_flat/StaticBody2D"]
-shape = SubResource( 8 )
+shape = SubResource( 4 )
 
 [node name="roof_left" type="Sprite" parent="."]
 editor/display_folded = true
@@ -134,7 +138,7 @@ texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="roof_left/StaticBody2D"]
 position = Vector2( 10.9698, -11.8971 )
-shape = SubResource( 9 )
+shape = SubResource( 5 )
 
 [node name="roof_middle" type="Sprite" parent="."]
 editor/display_folded = true
@@ -145,7 +149,7 @@ texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="roof_middle/StaticBody2D"]
 position = Vector2( 0, -11.8971 )
-shape = SubResource( 10 )
+shape = SubResource( 6 )
 
 [node name="roof_right" type="Sprite" parent="."]
 editor/display_folded = true
@@ -156,7 +160,7 @@ texture = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="roof_right/StaticBody2D"]
 position = Vector2( -10.9838, -11.9568 )
-shape = SubResource( 11 )
+shape = SubResource( 7 )
 
 [node name="brick" type="Sprite" parent="."]
 position = Vector2( 304, 48 )
@@ -193,4 +197,13 @@ texture = ExtResource( 19 )
 [node name="garage_door_rt" type="Sprite" parent="."]
 position = Vector2( 464, 16 )
 texture = ExtResource( 20 )
+
+[node name="cinderblocks" type="Sprite" parent="."]
+position = Vector2( 496, 16 )
+texture = ExtResource( 21 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cinderblocks"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cinderblocks/StaticBody2D"]
+shape = SubResource( 8 )
 

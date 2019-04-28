@@ -85,7 +85,7 @@ func _handle_input():
 		velocity.x -= max_speed
 
 	#using the rocket?
-	if Input.is_action_pressed("ui_up") and can_rocket:
+	if Input.is_action_pressed("jump") and can_rocket:
 		rocket_active = true
 		velocity.y = max(velocity.y - rocket_thrust, -max_rocket_speed)
 	else:
@@ -142,9 +142,11 @@ func has_rocket():
 func activate_cannon():
 	barrel.visible = true
 	can_fire = true
+	find_node("SndUpgrade").play()
 
 func activate_rocket():
 	can_rocket = true
+	find_node("SndUpgrade").play()
 
 func dump_data():
 	var data = Dictionary()

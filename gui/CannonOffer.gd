@@ -58,15 +58,15 @@ func _on_Pay_pressed():
 	if player.get_wealth() > price:
 		player.remove_wealth(price)
 		_grant_cannon()
-		_respond_with("Wonderful.  My children will eat tonight.  As thanks, I will not charge for the installation!")
+		_respond_with("\"Wonderful, my children will eat tonight.  As thanks, I will not charge for the installation!\"")
 	else:
-		_respond_with("Excellent.  Allow me to just... no, wait.  You don't have enough money!  You dirty cheat!  Leave, and don't come back until you have $%s." % price)
+		_respond_with("\"Excellent.  Allow me to just... no, wait.  You don't have enough money!  You dirty cheat!  Leave, and don't come back until you have $%s.\"" % price)
 
 func _on_Steal_pressed():
 	offer_dialog.visible = false
 	_grant_cannon()
 	_spawn_mechanic()
-	_respond_with("You thieving rascal!  My children are starving!  ...But no longer.  Tonight... we dine on duck!  AVAST!")
+	_respond_with("\"You foul thief!  My children are starving, and you do this thing to us?!  Well, so be it!  Tonight we dine on duck!  AVAST!\"")
 
 func _on_Dismiss_pressed():
 	_hide_all()

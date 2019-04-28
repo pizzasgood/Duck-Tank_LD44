@@ -36,7 +36,7 @@ margin_bottom = 179.0
 margin_right = 403.0
 margin_bottom = 141.0
 custom_fonts/font = ExtResource( 2 )
-text = "Comrade, your tank is very handsome but it lacks a cannon!  Lucky for you, I was allocated a cannon during the Great Redistribution, and its colors would match your tank flawlessly.  I'd be happy to sell you this cannon for a piddly sum of $1000.  It's a deal, yes?"
+text = "\"Comrade, your tank is very handsome but it lacks a cannon!  Lucky for you, I was allocated a cannon during the Great Redistribution, and its colors would match your tank flawlessly.  I'd be happy to sell you this cannon for a piddly sum of $1000.  It is a deal, yes?\""
 align = 3
 autowrap = true
 

@@ -11,6 +11,7 @@ export var wander_range = [ -100, 100 ]
 export var speed = 100
 export var bomb_random_factor = 0.5 #chance per second
 export var bomb_cooldown = 1
+export var bomb_fuse = 2
 
 var r = RandomNumberGenerator.new()
 
@@ -46,10 +47,12 @@ func _drop_loot_and_die():
 		bag.linear_velocity = velocity
 		bag.money = money
 		var snd = find_node("SndOw")
-		snd.get_parent().remove_child(snd)
-		bag.add_child(snd)
-		snd.global_position = global_position
-		snd.play()
+		#if it gets run over and shot in the same frame, snd might not be available anymore, so check
+		if snd:
+			snd.get_parent().remove_child(snd)
+			bag.add_child(snd)
+			snd.global_position = global_position
+			snd.play()
 		queue_free()
 
 func _physics_process(delta):
@@ -78,6 +81,7 @@ func _artificial_stupidity(delta):
 
 func _toss_bomb():
 	var projectile = Bomb.instance()
+	projectile.set_fuse(bomb_fuse)
 	get_tree().get_current_scene().add_child(projectile)
 	projectile.global_position = global_position
 	projectile.linear_velocity = velocity

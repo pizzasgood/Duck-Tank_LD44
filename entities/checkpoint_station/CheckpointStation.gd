@@ -18,6 +18,12 @@ func set_state(saved):
 func activate():
 	Checkpoints.set_checkpoint(get_path())
 	set_state(true)
+	find_node("SndActivate").play()
+
+func deactivate():
+	set_state(false)
+	if Checkpoints.station == get_path():
+		Checkpoints.station = null
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):

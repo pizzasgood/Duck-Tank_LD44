@@ -20,6 +20,7 @@ autoplay = true
 layer = -10
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 z_index = -9
 motion_scale = Vector2( 0.5, 0.5 )
 motion_mirroring = Vector2( 1280, 1280 )
@@ -33,7 +34,7 @@ stretch_mode = 2
 [node name="Level1" parent="." instance=ExtResource( 3 )]
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 208.423, 214.679 )
+position = Vector2( 19.1735, 191.634 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
