@@ -91,19 +91,24 @@ func _handle_input():
 	else:
 		rocket_active = false
 
-	#get mouse stuff
-	var mouse_pos = get_viewport().canvas_transform.inverse() * get_viewport().get_mouse_position()
-	var angle = global_position.angle_to_point(mouse_pos)
-
 	#mirror tank?
+	var mouse_pos = get_viewport().canvas_transform.inverse() * get_viewport().get_mouse_position()
 	main_body.flip_h = mouse_pos.x < global_position.x
 	if (main_body.flip_h and barrel.position.x > 0) or (not main_body.flip_h and barrel.position.x < 0):
 		barrel.position.x *= -1
 		exhaust_pipe.position.x *= -1
 
 	#tilt the barrel to aim at the mouse
-	#if angle > PI - max_barrel_angle or angle < -PI - min_barrel_angle:
-	barrel.look_at(mouse_pos)
+	var d = mouse_pos - barrel.global_position
+	if d.x == 0:
+		d.x = 1 #avoid division by zero
+	var angle = atan(d.y/abs(d.x))
+	angle = min(max(angle, -max_barrel_angle), -min_barrel_angle)
+	#barrel.look_at(mouse_pos)
+	if mouse_pos.x < global_position.x:
+		#mirror the angle around y axis
+		angle = PI - angle
+	barrel.global_rotation = angle
 
 	#firing?
 	if Input.is_action_just_pressed("fire") and can_fire:
