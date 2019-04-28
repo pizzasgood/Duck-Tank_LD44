@@ -37,11 +37,13 @@ onready var rocket_exhaust = find_node("RocketExhaust")
 func _ready():
 	if Checkpoints.available() and Checkpoints.player_data:
 		load_data(Checkpoints.player_data)
+	rocket_exhaust.emitting = false
+	drive_exhaust.emitting = false
 
 func _process(delta):
 	if wealth <= 0:
 		main_body.modulate = Color(1, 0, 0, 1)
-		get_node("/root/main/GUI/GameOver").activate()
+		get_tree().get_current_scene().find_node("GameOver").activate()
 
 func _physics_process(delta):
 	_handle_input()
@@ -103,7 +105,7 @@ func _handle_input():
 	#firing?
 	if Input.is_action_just_pressed("fire") and can_fire:
 		var projectile = CashWad.instance()
-		get_node("/root/main").add_child(projectile)
+		get_tree().get_current_scene().add_child(projectile)
 		projectile.linear_velocity = velocity
 		projectile.global_transform = barrel_end.global_transform
 		projectile.apply_central_impulse(projectile_impulse * (barrel_end.global_position - barrel.global_position).normalized())

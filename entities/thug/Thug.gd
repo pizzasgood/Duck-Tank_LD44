@@ -41,7 +41,7 @@ func _on_body_entered(object):
 
 func _drop_loot_and_die():
 		var bag = MoneyBag.instance()
-		get_node("/root/main").add_child(bag)
+		get_tree().get_current_scene().add_child(bag)
 		bag.global_position = global_position
 		bag.linear_velocity = velocity
 		bag.money = money
@@ -78,7 +78,7 @@ func _artificial_stupidity(delta):
 
 func _toss_bomb():
 	var projectile = Bomb.instance()
-	get_node("/root/main").add_child(projectile)
+	get_tree().get_current_scene().add_child(projectile)
 	projectile.global_position = global_position
 	projectile.linear_velocity = velocity
 	projectile.apply_central_impulse(100 * Vector2(direction.x, -1).normalized())

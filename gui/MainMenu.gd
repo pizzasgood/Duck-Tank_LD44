@@ -6,7 +6,7 @@ onready var music_toggle : CheckButton = find_node("MusicToggle")
 
 func _ready():
 	visible = false
-	get_node("/root/main/BGM").playing = Checkpoints.music #this isn't really the appropriate place for this, but am in a hurry
+	get_tree().get_current_scene().find_node("BGM").playing = Checkpoints.music #this isn't really the appropriate place for this, but am in a hurry
 
 
 func _on_Exit_pressed():
@@ -18,12 +18,14 @@ func _on_Resume_pressed():
 	get_tree().paused = false
 
 func _unhandled_input(event):
-	####
-	if event.is_action_pressed("ui_end"):
-		Checkpoints.set_checkpoint()
-	if event.is_action_pressed("ui_home"):
-		Checkpoints.restore_checkpoint()
-	####
+	#define some debug controls
+	if OS.is_debug_build():
+		#manual savepoints are useful
+		if event.is_action_pressed("ui_end"):
+			Checkpoints.set_checkpoint()
+		if event.is_action_pressed("ui_home"):
+			Checkpoints.restore_checkpoint()
+
 	if event.is_action_pressed("menu"):
 		if visible:
 			_on_Resume_pressed()

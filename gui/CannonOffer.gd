@@ -12,7 +12,7 @@ onready var accept_button : Button = find_node("Pay")
 onready var steal_button : Button = find_node("Steal")
 onready var dismiss_button : Button = find_node("Dismiss")
 
-onready var mechanic_spawn = get_node("/root/main").find_node("MechanicSpawn")
+onready var mechanic_spawn = get_tree().get_current_scene().find_node("MechanicSpawn")
 
 var Thug = load("res://entities/thug/Thug.tscn")
 
