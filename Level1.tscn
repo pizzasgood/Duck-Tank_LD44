@@ -167,7 +167,6 @@ position = Vector2( 105.79, 166.943 )
 position = Vector2( 498.5, 176.704 )
 
 [node name="Laboratory" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 4765.08, 1294.19 )
 
 [node name="MoneyBag" parent="Laboratory" instance=ExtResource( 4 )]
@@ -236,9 +235,6 @@ position = Vector2( -527.693, -346.434 )
 [node name="Thug2" parent="Laboratory" instance=ExtResource( 6 )]
 position = Vector2( 369.228, -344.101 )
 
-[node name="Thug3" parent="Laboratory" instance=ExtResource( 6 )]
-position = Vector2( 118.463, -342.935 )
-
 [node name="Thug4" parent="Laboratory" instance=ExtResource( 6 )]
 position = Vector2( -187.12, -342.935 )
 
@@ -262,12 +258,6 @@ position = Vector2( -127.267, 141.457 )
 
 [node name="Thug12" parent="Laboratory" instance=ExtResource( 6 )]
 position = Vector2( -325.601, 141.457 )
-
-[node name="Thug13" parent="Laboratory" instance=ExtResource( 6 )]
-position = Vector2( -119.334, 333.444 )
-
-[node name="Thug14" parent="Laboratory" instance=ExtResource( 6 )]
-position = Vector2( -206.601, 333.444 )
 
 [node name="Thug15" parent="Laboratory" instance=ExtResource( 6 )]
 position = Vector2( -271.654, 331.857 )
@@ -449,7 +439,6 @@ position = Vector2( 862.651, -275.333 )
 position = Vector2( 221.723, 167.869 )
 
 [node name="Sewer" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 6880.53, 1816.56 )
 
 [node name="MoneyBag" parent="Sewer" instance=ExtResource( 4 )]
@@ -742,9 +731,6 @@ position = Vector2( -991.24, 288.311 )
 [node name="Thug22" parent="Sewer" instance=ExtResource( 6 )]
 position = Vector2( -1233.39, 291.031 )
 
-[node name="Thug23" parent="Sewer" instance=ExtResource( 6 )]
-position = Vector2( -1368.06, 293.752 )
-
 [node name="Thug24" parent="Sewer" instance=ExtResource( 6 )]
 position = Vector2( -1491.86, 289.671 )
 
@@ -774,9 +760,6 @@ position = Vector2( -727.329, -155.17 )
 
 [node name="Thug32" parent="Sewer" instance=ExtResource( 6 )]
 position = Vector2( -1030.69, -349.702 )
-
-[node name="Thug33" parent="Sewer" instance=ExtResource( 6 )]
-position = Vector2( -910.979, -348.342 )
 
 [node name="Thug34" parent="Sewer" instance=ExtResource( 6 )]
 position = Vector2( -519.192, -348.342 )
@@ -820,10 +803,6 @@ wander_range = [ 5, 5 ]
 
 [node name="Thug4" parent="Sewer" instance=ExtResource( 6 )]
 position = Vector2( 442.748, 68.4763 )
-wander_range = [ -20, 20 ]
-
-[node name="Thug2" parent="Sewer" instance=ExtResource( 6 )]
-position = Vector2( 82.2275, 101.887 )
 wander_range = [ -20, 20 ]
 
 [node name="Thug3" parent="Sewer" instance=ExtResource( 6 )]
@@ -938,16 +917,8 @@ money = 200
 position = Vector2( 612.955, 106.891 )
 money = 200
 
-[node name="Thug5" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 653.039, 105.221 )
-money = 200
-
 [node name="Thug6" parent="Castle" instance=ExtResource( 6 )]
 position = Vector2( 815.047, 103.551 )
-money = 200
-
-[node name="Thug7" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 903.566, 95.2001 )
 money = 200
 
 [node name="Thug8" parent="Castle" instance=ExtResource( 6 )]
@@ -955,11 +926,7 @@ position = Vector2( 1038.85, 93.5299 )
 money = 200
 
 [node name="Thug9" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1194.18, 91.8597 )
-money = 200
-
-[node name="Thug10" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1331.13, 91.8597 )
+position = Vector2( 1262.65, 98.5404 )
 money = 200
 
 [node name="Thug11" parent="Castle" instance=ExtResource( 6 )]
@@ -1109,18 +1076,8 @@ position = Vector2( 1127.37, 334.035 )
 money = 200
 wander_range = [ -10, 10 ]
 
-[node name="Thug41" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1962.46, -178.709 )
-money = 200
-wander_range = [ -5, -5 ]
-
 [node name="Thug44" parent="Castle" instance=ExtResource( 6 )]
 position = Vector2( 2187.93, -268.898 )
-money = 200
-wander_range = [ -5, -5 ]
-
-[node name="Thug45" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 2187.93, -430.906 )
 money = 200
 wander_range = [ -5, -5 ]
 
@@ -1131,11 +1088,6 @@ wander_range = [ -5, -5 ]
 
 [node name="Thug47" parent="Castle" instance=ExtResource( 6 )]
 position = Vector2( 2181.25, 81.8384 )
-money = 200
-wander_range = [ -5, -5 ]
-
-[node name="Thug48" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 2182.92, 303.972 )
 money = 200
 wander_range = [ -5, -5 ]
 
@@ -1154,11 +1106,6 @@ position = Vector2( 1066.12, 617.471 )
 money = 200
 wander_range = [ -5, -5 ]
 
-[node name="Thug113" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1738.23, -17.5436 )
-money = 200
-wander_range = [ -5, -5 ]
-
 [node name="Thug114" parent="Castle" instance=ExtResource( 6 )]
 position = Vector2( 1099.19, -630.112 )
 money = 200
@@ -1174,16 +1121,6 @@ position = Vector2( 2231.2, -755.22 )
 money = 200
 wander_range = [ -5, -5 ]
 
-[node name="Thug117" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 2984.87, -764.264 )
-money = 200
-wander_range = [ -5, -5 ]
-
-[node name="Thug118" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1126.18, -309.135 )
-money = 200
-wander_range = [ -5, -5 ]
-
 [node name="Thug51" parent="Castle" instance=ExtResource( 6 )]
 position = Vector2( 1962.46, -529.446 )
 money = 200
@@ -1191,21 +1128,6 @@ wander_range = [ -5, -5 ]
 
 [node name="Thug52" parent="Castle" instance=ExtResource( 6 )]
 position = Vector2( 1995.86, -723.187 )
-money = 200
-wander_range = [ -5, -5 ]
-
-[node name="Thug53" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 2283.13, -1205.87 )
-money = 200
-wander_range = [ -5, -5 ]
-
-[node name="Thug54" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 910.244, -1202.53 )
-money = 200
-wander_range = [ -5, -5 ]
-
-[node name="Thug42" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 2186.26, -78.4984 )
 money = 200
 wander_range = [ -5, -5 ]
 
@@ -1249,36 +1171,16 @@ money = 200
 position = Vector2( 1927.38, -696.464 )
 money = 200
 
-[node name="Thug64" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1650.13, -888.534 )
-money = 200
-
 [node name="Thug65" parent="Castle" instance=ExtResource( 6 )]
 position = Vector2( 1716.94, -888.534 )
-money = 200
-
-[node name="Thug66" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1521.53, -895.214 )
 money = 200
 
 [node name="Thug67" parent="Castle" instance=ExtResource( 6 )]
 position = Vector2( 1461.4, -891.874 )
 money = 200
 
-[node name="Thug68" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1331.13, -893.544 )
-money = 200
-
-[node name="Thug69" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1269.33, -891.874 )
-money = 200
-
 [node name="Thug70" parent="Castle" instance=ExtResource( 6 )]
 position = Vector2( 1135.72, -890.204 )
-money = 200
-
-[node name="Thug71" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1060.56, -890.204 )
 money = 200
 
 [node name="Thug72" parent="Castle" instance=ExtResource( 6 )]
@@ -1293,24 +1195,12 @@ money = 200
 position = Vector2( 1511.51, -1040.52 )
 money = 200
 
-[node name="Thug75" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1586.67, -1042.19 )
-money = 200
-
-[node name="Thug76" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1655.14, -1047.2 )
-money = 200
-
 [node name="Thug77" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1696.9, -1048.87 )
+position = Vector2( 1663.49, -1043.86 )
 money = 200
 
 [node name="Thug78" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 2061, -901.895 )
-money = 200
-
-[node name="Thug79" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 2142.83, -893.544 )
+position = Vector2( 2091.14, -892.375 )
 money = 200
 
 [node name="Thug80" parent="Castle" instance=ExtResource( 6 )]
@@ -1319,10 +1209,6 @@ money = 200
 
 [node name="Thug81" parent="Castle" instance=ExtResource( 6 )]
 position = Vector2( 2513.61, -764.941 )
-money = 200
-
-[node name="Thug82" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 2697.33, -766.611 )
 money = 200
 
 [node name="Thug83" parent="Castle" instance=ExtResource( 6 )]
@@ -1341,64 +1227,28 @@ money = 200
 position = Vector2( 1538.23, 424.224 )
 money = 200
 
-[node name="Thug87" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1630.09, 430.905 )
-money = 200
-
-[node name="Thug88" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1332.8, 430.905 )
-money = 200
-
-[node name="Thug89" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1237.6, 422.554 )
-money = 200
-
 [node name="Thug90" parent="Castle" instance=ExtResource( 6 )]
 position = Vector2( 1276.01, 547.818 )
-money = 200
-
-[node name="Thug91" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1463.07, 546.147 )
 money = 200
 
 [node name="Thug92" parent="Castle" instance=ExtResource( 6 )]
 position = Vector2( 1628.42, 539.467 )
 money = 200
 
-[node name="Thug93" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1758.69, 546.147 )
-money = 200
-
 [node name="Thug94" parent="Castle" instance=ExtResource( 6 )]
 position = Vector2( 1905.67, 541.137 )
 money = 200
 
-[node name="Thug95" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1952.43, 552.828 )
-money = 200
-
-[node name="Thug96" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1332.8, 552.828 )
-money = 200
-
 [node name="Thug97" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1142.4, 429.235 )
+position = Vector2( 1225.91, 420.884 )
 money = 200
 
 [node name="Thug98" parent="Castle" instance=ExtResource( 6 )]
 position = Vector2( 1145.74, 674.751 )
 money = 200
 
-[node name="Thug99" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1299.16, 680.166 )
-money = 200
-
 [node name="Thug100" parent="Castle" instance=ExtResource( 6 )]
 position = Vector2( 1449.88, 679.263 )
-money = 200
-
-[node name="Thug101" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1621.35, 675.653 )
 money = 200
 
 [node name="Thug102" parent="Castle" instance=ExtResource( 6 )]
@@ -1409,36 +1259,12 @@ money = 200
 position = Vector2( 2030.19, 678.361 )
 money = 200
 
-[node name="Thug104" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 2122.24, 679.263 )
-money = 200
-
 [node name="Thug105" parent="Castle" instance=ExtResource( 6 )]
 position = Vector2( 1958.11, 422.086 )
 money = 200
 
-[node name="Thug106" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 2016.27, 424.67 )
-money = 200
-
-[node name="Thug107" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 2018.85, 555.198 )
-money = 200
-
-[node name="Thug108" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1431.75, -545.617 )
-money = 200
-
-[node name="Thug109" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1382.11, -318.979 )
-money = 200
-
 [node name="Thug110" parent="Castle" instance=ExtResource( 6 )]
 position = Vector2( 358.194, 98.4468 )
-money = 200
-
-[node name="Thug111" parent="Castle" instance=ExtResource( 6 )]
-position = Vector2( 1263.19, 92.71 )
 money = 200
 
 [node name="MoneyBag" parent="Castle" instance=ExtResource( 4 )]
@@ -1451,10 +1277,6 @@ money = 200
 
 [node name="MoneyBag3" parent="Castle" instance=ExtResource( 4 )]
 position = Vector2( 752.438, 94.1281 )
-money = 200
-
-[node name="MoneyBag4" parent="Castle" instance=ExtResource( 4 )]
-position = Vector2( 359.38, -199.791 )
 money = 200
 
 [node name="MoneyBag5" parent="Castle" instance=ExtResource( 4 )]
@@ -1561,24 +1383,12 @@ money = 200
 position = Vector2( 2187.04, 480.189 )
 money = 200
 
-[node name="MoneyBag27" parent="Castle" instance=ExtResource( 4 )]
-position = Vector2( 2189.38, 319.233 )
-money = 200
-
 [node name="MoneyBag28" parent="Castle" instance=ExtResource( 4 )]
 position = Vector2( 2188.21, 95.2944 )
 money = 200
 
-[node name="MoneyBag29" parent="Castle" instance=ExtResource( 4 )]
-position = Vector2( 2187.04, -69.1603 )
-money = 200
-
 [node name="MoneyBag30" parent="Castle" instance=ExtResource( 4 )]
 position = Vector2( 2184.71, -258.108 )
-money = 200
-
-[node name="MoneyBag31" parent="Castle" instance=ExtResource( 4 )]
-position = Vector2( 2184.71, -419.064 )
 money = 200
 
 [node name="MoneyBag32" parent="Castle" instance=ExtResource( 4 )]
@@ -1779,10 +1589,6 @@ money = 200
 
 [node name="MoneyBag108" parent="Castle" instance=ExtResource( 4 )]
 position = Vector2( 853.652, -481.344 )
-money = 200
-
-[node name="MoneyBag109" parent="Castle" instance=ExtResource( 4 )]
-position = Vector2( 873.652, -487.344 )
 money = 200
 
 [node name="MoneyBag110" parent="Castle" instance=ExtResource( 4 )]

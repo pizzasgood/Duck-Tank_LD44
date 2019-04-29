@@ -12,12 +12,16 @@ func _physics_process(delta):
 	speed = linear_velocity.length_squared()
 
 func _on_body_entered(object):
-	find_node("SndThud").volume_db = min(speed/10000, 15) - 15
-	find_node("SndThud").play()
+	var snd_thud = find_node("SndThud")
+	if snd_thud:
+		snd_thud.volume_db = min(speed/10000, 15) - 15
+		snd_thud.play()
 	if object.is_in_group("enemy"):
 		poof()
 	if object.is_in_group("player"):
-		find_node("SndBling").play()
+		var snd_bling = find_node("SndBling")
+		if snd_bling:
+			snd_bling.play()
 		$PoofP.activate()
 		object.add_wealth(money)
 		queue_free()

@@ -7,7 +7,9 @@ func _ready():
 
 func _on_body_entered(object):
 	if object.is_in_group("player"):
-		find_node("SndBling").play()
+		var snd_bling = find_node("SndBling")
+		if snd_bling:
+			snd_bling.play()
 		$Poof.activate()
 		object.add_wealth(money)
 		queue_free()

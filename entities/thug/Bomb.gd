@@ -21,7 +21,9 @@ func _on_Timer_timeout():
 
 func explode():
 	$Fuse.stop()
-	find_node("SndBoom").play()
+	var snd_boom = find_node("SndBoom")
+	if snd_boom:
+		snd_boom.play()
 	$Poof.activate()
 	if $AoE.overlaps_body(player):
 		player.damage(damage)
