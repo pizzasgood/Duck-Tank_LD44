@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://bgm/basswalk.ogg" type="AudioStream" id=1]
 [ext_resource path="res://bgs/sky1.png" type="Texture" id=2]
@@ -7,7 +7,8 @@
 [ext_resource path="res://gui/WealthBar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://gui/MainMenu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://gui/GameOver.tscn" type="PackedScene" id=7]
-[ext_resource path="res://gui/BasicDialog.tscn" type="PackedScene" id=8]
+[ext_resource path="res://gui/Victory.tscn" type="PackedScene" id=8]
+[ext_resource path="res://gui/BasicDialog.tscn" type="PackedScene" id=9]
 
 [node name="main" type="Node"]
 
@@ -47,6 +48,11 @@ visible = false
 [node name="GameOver" parent="GUI" instance=ExtResource( 7 )]
 visible = false
 
-[node name="BasicDialog" parent="GUI" instance=ExtResource( 8 )]
+[node name="Victory" parent="GUI" instance=ExtResource( 8 )]
+visible = false
+margin_right = 120.0
+margin_bottom = 97.0
+
+[node name="BasicDialog" parent="GUI" instance=ExtResource( 9 )]
 visible = false
 

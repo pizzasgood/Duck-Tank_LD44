@@ -1,6 +1,6 @@
 extends CenterContainer
 
-onready var restart_button : Button = find_node("Restart")
+onready var title_button : Button = find_node("Title")
 onready var exit_button : Button = find_node("Exit")
 
 func _ready():
@@ -9,15 +9,7 @@ func _ready():
 func activate():
 	get_tree().paused = true
 	visible = true
-	restart_button.grab_focus()
-
-func _on_Restart_pressed():
-	if Checkpoints.available():
-		Checkpoints.restore_checkpoint()
-		get_tree().paused = false
-	else:
-		get_tree().reload_current_scene()
-		get_tree().paused = false
+	title_button.grab_focus()
 
 func _on_Title_pressed():
 	get_tree().change_scene("res://TitleScreen.tscn")
