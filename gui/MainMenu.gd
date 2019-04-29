@@ -33,6 +33,10 @@ func _unhandled_input(event):
 			p.global_position = s.find_node("City").global_position
 		if event.is_action_pressed("teleport3"):
 			p.global_position = s.find_node("UnderMoat").global_position
+		if event.is_action_pressed("teleport4"):
+			p.global_position = s.find_node("Castle").global_position
+		if event.is_action_pressed("teleport5"):
+			p.global_position = s.find_node("Vault").global_position
 		#quick-saves
 		if event.is_action_pressed("ui_end"):
 			Checkpoints.set_checkpoint()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://tiles/dirt.png" type="Texture" id=1]
 [ext_resource path="res://tiles/road_flat.png" type="Texture" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://tiles/garage_door_rt.png" type="Texture" id=20]
 [ext_resource path="res://tiles/cinderblocks.png" type="Texture" id=21]
 [ext_resource path="res://tiles/window.png" type="Texture" id=22]
+[ext_resource path="res://tiles/treasure.png" type="Texture" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
@@ -45,6 +46,9 @@ extents = Vector2( 16, 4.10288 )
 extents = Vector2( 5.01166, 4.05226 )
 
 [sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 16, 16 )
 
 [node name="Node" type="Node"]
@@ -212,4 +216,14 @@ shape = SubResource( 8 )
 [node name="window" type="Sprite" parent="."]
 position = Vector2( 528, 16 )
 texture = ExtResource( 22 )
+
+[node name="treasure" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 560, 16 )
+texture = ExtResource( 23 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="treasure"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="treasure/StaticBody2D"]
+shape = SubResource( 9 )
 
