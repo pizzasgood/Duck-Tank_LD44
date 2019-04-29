@@ -9,10 +9,10 @@ var starting_x
 var direction = Vector2.LEFT
 export var speed = 100
 export var wander_range = [ -100, 100 ]
-export var turn_factor = 1 #chance per second
+export var turn_factor = 1.0 #chance per second
 export var bomb_random_factor = 0.5 #chance per second
-export var bomb_cooldown = 1
-export var bomb_fuse = 2
+export var bomb_cooldown = 1.0
+export var bomb_fuse = 2.0
 
 var r = RandomNumberGenerator.new()
 

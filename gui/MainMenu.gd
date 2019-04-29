@@ -25,11 +25,14 @@ func _unhandled_input(event):
 		if event.is_action_pressed("debug_upgrades"):
 			p.activate_cannon()
 			p.activate_rocket()
-			p.add_wealth(5000)
+			if Input.is_key_pressed(KEY_SHIFT):
+				p.add_wealth(5000)
 		if event.is_action_pressed("teleport1"):
 			p.global_position = s.find_node("ShopZone").global_position
 		if event.is_action_pressed("teleport2"):
 			p.global_position = s.find_node("City").global_position
+		if event.is_action_pressed("teleport3"):
+			p.global_position = s.find_node("UnderMoat").global_position
 		#quick-saves
 		if event.is_action_pressed("ui_end"):
 			Checkpoints.set_checkpoint()
