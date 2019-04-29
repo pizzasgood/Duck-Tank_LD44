@@ -15,8 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="LD44"
-run/main_scene="res://main.tscn"
+config/name="Duck-Tank (LD44)"
+run/main_scene="res://TitleScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
