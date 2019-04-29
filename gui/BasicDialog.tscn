@@ -35,6 +35,7 @@ margin_top = 193.0
 margin_right = 457.0
 margin_bottom = 220.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
 text = "OK"
 
