@@ -21,6 +21,10 @@ onready var sprite = $Sprite
 var MoneyBag = load("res://entities/pickups/MoneyBag.tscn")
 var Bomb = load("res://entities/thug/Bomb.tscn")
 
+#POST LD44 TIMELIMIT PERFORMANCE FIX TO ALLOW HTML PORT
+onready var player = get_tree().get_nodes_in_group("player")[0]
+var performance_prox_range = 2000 #if player is farther than this, don't do anything
+
 func _ready():
 	$Area2D.connect("body_entered", self, "_on_body_entered")
 	set_bomb_cooldown(bomb_cooldown)
@@ -57,6 +61,10 @@ func _drop_loot_and_die():
 		queue_free()
 
 func _physics_process(delta):
+	#POST LD44 TIMELIMIT PERFORMANCE FIX TO ALLOW HTML PORT
+	if abs(player.global_position.x - global_position.x) > performance_prox_range:
+		return
+
 	_artificial_stupidity(delta)
 
 	if jumping:

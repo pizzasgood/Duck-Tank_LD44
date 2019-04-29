@@ -133,7 +133,6 @@ position = Vector2( 231.979, 342.784 )
 position = Vector2( 401.726, 341.236 )
 
 [node name="ShopZone" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 3092.23, 1039.27 )
 
 [node name="Thug5" parent="ShopZone" instance=ExtResource( 6 )]
@@ -1700,7 +1699,6 @@ position = Vector2( 2606.93, -778.299 )
 money = 200
 
 [node name="Vault" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 14099.8, -140.064 )
 
 [node name="MoneyBag" parent="Vault" instance=ExtResource( 4 )]

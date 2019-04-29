@@ -10,7 +10,11 @@ func _ready():
 
 
 func _on_Exit_pressed():
-	get_tree().quit()
+	if OS.get_name() == "HTML5":
+		#can't actually exit on HTML5, so return to title
+		get_tree().change_scene("res://TitleScreen.tscn")
+	else:
+		get_tree().quit()
 
 
 func _on_Resume_pressed():

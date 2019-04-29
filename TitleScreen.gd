@@ -15,7 +15,11 @@ func _unhandled_input(event):
 		_on_Exit_pressed()
 
 func _on_Exit_pressed():
-	get_tree().quit()
+	if OS.get_name() == "HTML5":
+		#can't actually exit on HTML5
+		pass
+	else:
+		get_tree().quit()
 
 func _on_Start_pressed():
 	get_tree().change_scene("res://main.tscn")
